@@ -165,8 +165,8 @@
 						<h2>
 							
 	
-		<a href="/2019/02/04/11ContainerWithMostWater/" itemprop="url">		
-			11ContainerWithMostWater		
+		<a href="/2020/03/02/LZW压缩/" itemprop="url">		
+			LZW压缩		
 		</a>
 	
 
@@ -175,16 +175,189 @@
 						
 							<p>
 								
-									题目描述Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find t	
+									
+部分图片和代码来自于《算法》，非商业用途，仅供学习使用。
+
+LZW压缩摘要
+是一种数据压缩算法
+可以处理变长模式，最终生成一张定长的编码编译表
+生成编译表的过程在压缩过程中完成，而不是先生成完整编译表再压缩
+输出数据时不用附上编译表
+
+1 背景LZW压缩算法，全称为“Lempel-Ziv-Welch Encoding”，是Unisys的专利，在2003后失效，可随意使用。
+2 LZW算法思想我们	
 								  
 							</p>
 						
 
 						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2019-02-04
+							<i class="fa fa-clock-o"></i>&nbsp2020-03-02
 						</span>
 						<span class="continue-read">       	
-							<a href="/2019/02/04/11ContainerWithMostWater/" class="pull-right">
+							<a href="/2020/03/02/LZW压缩/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2020/02/29/霍夫曼压缩/" itemprop="url">		
+			霍夫曼压缩		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									
+部分图片、代码来源于《算法》，非商业用途，只供学习使用。
+
+霍夫曼压缩摘要
+是一种数据压缩算法
+使用变长前缀码
+需要额外的空间（如构造单词查找树）来生成编码编译表
+为输入中的定长模式产生一种变长的编码编译表
+输出压缩后的数据时，需要同时输出编码编译表
+算法本质是寻找最优前缀码
+
+1 背景霍夫曼压缩是一种字符串压缩算法，可以大幅压缩自然语言文件空间。这种寻找最有前缀码的通用方法是D.Huffman	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2020-02-29
+						</span>
+						<span class="continue-read">       	
+							<a href="/2020/02/29/霍夫曼压缩/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2020/02/19/最大公约数和最小公倍数/" itemprop="url">		
+			最大公约数和最小公倍数		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									最大公约数求法1. 辗转相除法public int getMaxCommonDivisor1(int a, int b){
+    int temp = 1;
+    int aa = Math.max(a,b);
+    int bb = Math.min(a,b);
+    while(temp != 0){
+        temp = aa % bb;
+        aa = bb;
+ 	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2020-02-19
+						</span>
+						<span class="continue-read">       	
+							<a href="/2020/02/19/最大公约数和最小公倍数/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2020/02/17/编辑距离算法/" itemprop="url">		
+			编辑距离算法		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									编辑距离算法(Levenshtein Distance)编辑距离算法，又叫字符串相似度算法。
+算法介绍最近刷CodeWars时遇到了一道题，题目表述如下：
+I&#39;m sure, you know Google&#39;s &quot;Did you mean ...?&quot;, when you entered a search term and mistyped a word. In 	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2020-02-17
+						</span>
+						<span class="continue-read">       	
+							<a href="/2020/02/17/编辑距离算法/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2020/01/20/114-Flatten-Binary-Tree-To-Linked-List/" itemprop="url">		
+			114 Flatten Binary Tree To Linked List		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									题目描述Given a binary tree, flatten it to a linked list in-place.
+
+For example, given the following tree:
+
+    1
+   / \
+  2   5
+ / \   \
+3   4   6
+The flattened tree should look like:
+
+1
+ \
+  2
+   \
+    	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2020-01-20
+						</span>
+						<span class="continue-read">       	
+							<a href="/2020/01/20/114-Flatten-Binary-Tree-To-Linked-List/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
@@ -194,7 +367,17 @@
 				     
 			</li>
 
-			    	
+			
+	<ul class="am-pagination">
+		
+		
+		
+			<li class="am-pagination-next">
+				<a href="/page/2/"> 下一页 &raquo; </a>
+			</li>
+		
+	</ul>
+    	
 		</div>
     </div>
 </div>

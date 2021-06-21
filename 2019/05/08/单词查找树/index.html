@@ -62,7 +62,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		5/8/2021 
+		6/21/2021 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -142,10 +142,6 @@
            		<a href="/about" title="关于">关于</a>	
       		</li>
     		
-      		<li class="fa fa-/gallery">
-           		<a href="/gallery" title="相册">相册</a>	
-      		</li>
-    		
     		
         	
             	<li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search">搜索</a></li>
@@ -207,97 +203,13 @@
 <li>查找命中所需的时间与被查找的键的长度成正比</li>
 <li>查找未命中只需检查若干个字符</li>
 </ul>
-<h2 id="前缀树-字典树"><a href="#前缀树-字典树" class="headerlink" title="前缀树/字典树"></a>前缀树/字典树</h2><p>LeetCode有一道题实现字典树，我们先看一下题目描述：</p>
-<pre><code>Trie（发音类似 &quot;try&quot;）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
-
-请你实现 Trie 类：
-
-Trie() 初始化前缀树对象。
-void insert(String word) 向前缀树中插入字符串 word 。
-boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。
-boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。
-
-
-示例：
-
-输入
-[&quot;Trie&quot;, &quot;insert&quot;, &quot;search&quot;, &quot;search&quot;, &quot;startsWith&quot;, &quot;insert&quot;, &quot;search&quot;]
-[[], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;], [&quot;app&quot;]]
-输出
-[null, null, true, false, true, null, true]
-
-解释
-Trie trie = new Trie();
-trie.insert(&quot;apple&quot;);
-trie.search(&quot;apple&quot;);   // 返回 True
-trie.search(&quot;app&quot;);     // 返回 False
-trie.startsWith(&quot;app&quot;); // 返回 True
-trie.insert(&quot;app&quot;);
-trie.search(&quot;app&quot;);     // 返回 True
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/implement-trie-prefix-tree
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-</code></pre><p>前缀树是一种特殊的数结构，每一个节点可以表示为单词的一个字母。这样的好处当多个单词有相同前缀时，只使用了一份空间。当你要查找重复单词时，或类似场景，在存储时可以节省大量空间。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Trie</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">private</span> Trie<span class="token punctuation">[</span><span class="token punctuation">]</span> children<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 表示到当前节点是否表示了一个单词</span>
-    <span class="token keyword">private</span> <span class="token keyword">boolean</span> isEnd<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">/** Initialize your data structure here. */</span>
-    <span class="token keyword">public</span> <span class="token function">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>children <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Trie</span><span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/** Inserts a word into the trie. */</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span>String word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Trie node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> word<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> index <span class="token operator">=</span> word<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>children<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                node<span class="token punctuation">.</span>children<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Trie</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            node <span class="token operator">=</span> node<span class="token punctuation">.</span>children<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        node<span class="token punctuation">.</span>isEnd <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/** Returns if the word is in the trie. */</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">search</span><span class="token punctuation">(</span>String word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Trie node <span class="token operator">=</span> <span class="token function">searchPrefix</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">==</span> null <span class="token operator">||</span> node<span class="token punctuation">.</span>isEnd <span class="token operator">==</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/** Returns if there is any word in the trie that starts with the given prefix. */</span>
-    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">startsWith</span><span class="token punctuation">(</span>String prefix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">searchPrefix</span><span class="token punctuation">(</span>prefix<span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> Trie <span class="token function">searchPrefix</span><span class="token punctuation">(</span>String prefix<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        Trie node <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> prefix<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            node <span class="token operator">=</span> node<span class="token punctuation">.</span>children<span class="token punctuation">[</span>prefix<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> node<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果把单词当作键值，还可以基于前缀树添加额外的内容。</p>
 <h2 id="基于单词查找树的符号表"><a href="#基于单词查找树的符号表" class="headerlink" title="基于单词查找树的符号表"></a>基于单词查找树的符号表</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TrieST</span><span class="token operator">&lt;</span>Value<span class="token operator">></span>
 <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> R<span class="token operator">=</span><span class="token number">256</span><span class="token punctuation">;</span>
     <span class="token keyword">private</span> Node root<span class="token punctuation">;</span>
 
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">{</span>
-        <span class="token keyword">private</span> Object val<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> Object va<span class="token punctuation">;</span>
         <span class="token keyword">private</span> Node<span class="token punctuation">[</span><span class="token punctuation">]</span>next<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 

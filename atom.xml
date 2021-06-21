@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://songjinze.github.io/"/>
-  <updated>2020-03-12T03:16:57.079Z</updated>
+  <updated>2021-06-21T07:22:10.097Z</updated>
   <id>https://songjinze.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>11ContainerWithMostWater</title>
-    <link href="https://songjinze.github.io/2019/02/04/11ContainerWithMostWater/"/>
-    <id>https://songjinze.github.io/2019/02/04/11ContainerWithMostWater/</id>
-    <published>2019-02-04T05:08:17.000Z</published>
-    <updated>2020-03-12T03:16:57.079Z</updated>
+    <title>LZW压缩</title>
+    <link href="https://songjinze.github.io/2020/03/02/LZW%E5%8E%8B%E7%BC%A9/"/>
+    <id>https://songjinze.github.io/2020/03/02/LZW压缩/</id>
+    <published>2020-03-02T08:11:50.000Z</published>
+    <updated>2021-06-21T07:22:10.097Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,520 @@
       
         
         
-          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each
+          &lt;blockquote&gt;
+&lt;p&gt;部分图片和代码来自于《算法》，非商业用途，仅供学习使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;LZW压缩&quot;&gt;&lt;a href=&quot;#LZW压缩&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据压缩" scheme="https://songjinze.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>霍夫曼压缩</title>
+    <link href="https://songjinze.github.io/2020/02/29/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E5%8E%8B%E7%BC%A9/"/>
+    <id>https://songjinze.github.io/2020/02/29/霍夫曼压缩/</id>
+    <published>2020-02-29T07:47:16.000Z</published>
+    <updated>2021-06-21T07:22:10.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;部分图片、代码来源于《算法》，非商业用途，只供学习使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;霍夫曼压缩&quot;&gt;&lt;a href=&quot;#霍夫曼压缩&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据压缩" scheme="https://songjinze.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最大公约数和最小公倍数</title>
+    <link href="https://songjinze.github.io/2020/02/19/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0/"/>
+    <id>https://songjinze.github.io/2020/02/19/最大公约数和最小公倍数/</id>
+    <published>2020-02-19T07:34:53.000Z</published>
+    <updated>2021-06-21T07:22:10.290Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;最大公约数求法&quot;&gt;&lt;a href=&quot;#最大公约数求法&quot; class=&quot;headerlink&quot; title=&quot;最大公约数求法&quot;&gt;&lt;/a&gt;最大公约数求法&lt;/h2&gt;&lt;h3 id=&quot;1-辗转相除法&quot;&gt;&lt;a href=&quot;#1-辗转相除法&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="数学" scheme="https://songjinze.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="个人经验" scheme="https://songjinze.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编辑距离算法</title>
+    <link href="https://songjinze.github.io/2020/02/17/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB%E7%AE%97%E6%B3%95/"/>
+    <id>https://songjinze.github.io/2020/02/17/编辑距离算法/</id>
+    <published>2020-02-17T05:42:27.000Z</published>
+    <updated>2021-06-21T07:22:10.380Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;编辑距离算法-Levenshtein-Distance&quot;&gt;&lt;a href=&quot;#编辑距离算法-Levenshtein-Distance&quot; class=&quot;headerlink&quot; title=&quot;编辑距离算法(Levenshtein
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>114 Flatten Binary Tree To Linked List</title>
+    <link href="https://songjinze.github.io/2020/01/20/114-Flatten-Binary-Tree-To-Linked-List/"/>
+    <id>https://songjinze.github.io/2020/01/20/114-Flatten-Binary-Tree-To-Linked-List/</id>
+    <published>2020-01-20T04:59:09.000Z</published>
+    <updated>2021-06-21T07:22:10.077Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given a binary tree, flatten it to a linked list
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://songjinze.github.io/2019/07/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://songjinze.github.io/2019/07/29/正则表达式/</id>
+    <published>2019-07-29T15:04:12.000Z</published>
+    <updated>2021-06-21T07:22:10.315Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;正则表达式&quot;&gt;&lt;a href=&quot;#正则表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式&quot;&gt;&lt;/a&gt;正则表达式&lt;/h2&gt;&lt;h3 id=&quot;1-描述模式&quot;&gt;&lt;a href=&quot;#1-描述模式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>交互设计的原则与目标</title>
+    <link href="https://songjinze.github.io/2019/07/07/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99%E4%B8%8E%E7%9B%AE%E6%A0%87/"/>
+    <id>https://songjinze.github.io/2019/07/07/交互设计的原则与目标/</id>
+    <published>2019-07-07T07:57:49.000Z</published>
+    <updated>2021-06-21T07:22:10.146Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;人机交互的软件工程方法——交互设计的原则与目标&quot;&gt;&lt;a href=&quot;#人机交互的软件工程方法——交互设计的原则与目标&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/categories/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用户界面设计原理</title>
+    <link href="https://songjinze.github.io/2019/07/07/%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86/"/>
+    <id>https://songjinze.github.io/2019/07/07/用户界面设计原理/</id>
+    <published>2019-07-07T07:57:15.000Z</published>
+    <updated>2021-06-21T07:22:10.356Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;用户界面设计原理&quot;&gt;&lt;a href=&quot;#用户界面设计原理&quot; class=&quot;headerlink&quot; title=&quot;用户界面设计原理&quot;&gt;&lt;/a&gt;用户界面设计原理&lt;/h2&gt;&lt;h3 id=&quot;结构原理&quot;&gt;&lt;a href=&quot;#结构原理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/categories/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>评估的基础知识</title>
+    <link href="https://songjinze.github.io/2019/06/29/%E8%AF%84%E4%BC%B0%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>https://songjinze.github.io/2019/06/29/评估的基础知识/</id>
+    <published>2019-06-29T10:03:48.000Z</published>
+    <updated>2021-06-21T07:22:10.402Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;评估的基础知识&quot;&gt;&lt;a href=&quot;#评估的基础知识&quot; class=&quot;headerlink&quot; title=&quot;评估的基础知识&quot;&gt;&lt;/a&gt;评估的基础知识&lt;/h2&gt;&lt;h3 id=&quot;1-什么是评估？&quot;&gt;&lt;a href=&quot;#1-什么是评估？&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/categories/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+    
+      <category term="人机交互" scheme="https://songjinze.github.io/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rabin-Karp子字符串查找算法</title>
+    <link href="https://songjinze.github.io/2019/06/13/Rabin-Karp%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <id>https://songjinze.github.io/2019/06/13/Rabin-Karp子字符串查找算法/</id>
+    <published>2019-06-12T18:01:34.000Z</published>
+    <updated>2021-06-21T07:22:10.118Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Rabin-Karp子字符串查找算法&quot;&gt;&lt;a href=&quot;#Rabin-Karp子字符串查找算法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Boyer-Moore字符串查找算法</title>
+    <link href="https://songjinze.github.io/2019/06/13/Boyer-Moore%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <id>https://songjinze.github.io/2019/06/13/Boyer-Moore字符串查找算法/</id>
+    <published>2019-06-12T16:20:04.000Z</published>
+    <updated>2021-06-21T07:22:10.085Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Boyer-Moore字符串查找算法&quot;&gt;&lt;a href=&quot;#Boyer-Moore字符串查找算法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Knuth-Morris-Pratt子字符串查找算法</title>
+    <link href="https://songjinze.github.io/2019/05/15/Knuth-Morris-Pratt%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <id>https://songjinze.github.io/2019/05/15/Knuth-Morris-Pratt子字符串查找算法/</id>
+    <published>2019-05-15T08:10:17.000Z</published>
+    <updated>2021-06-21T07:22:10.091Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Knuth-Morris-Pratt子字符串查找算法-KMP&quot;&gt;&lt;a href=&quot;#Knuth-Morris-Pratt子字符串查找算法-KMP&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>406 Queue Reconstruction by Height</title>
+    <link href="https://songjinze.github.io/2019/05/15/406-Queue-Reconstruction-by-Height/"/>
+    <id>https://songjinze.github.io/2019/05/15/406-Queue-Reconstruction-by-Height/</id>
+    <published>2019-05-15T08:06:55.000Z</published>
+    <updated>2021-06-21T07:22:10.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Suppose you have a random list of people standing in
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单词查找树</title>
+    <link href="https://songjinze.github.io/2019/05/08/%E5%8D%95%E8%AF%8D%E6%9F%A5%E6%89%BE%E6%A0%91/"/>
+    <id>https://songjinze.github.io/2019/05/08/单词查找树/</id>
+    <published>2019-05-08T02:35:17.000Z</published>
+    <updated>2021-06-21T07:22:10.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;单词查找树&quot;&gt;&lt;a href=&quot;#单词查找树&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>215 Kth Largest Element in an Array</title>
+    <link href="https://songjinze.github.io/2019/04/18/215-Kth-Largest-Element-in-an-Array/"/>
+    <id>https://songjinze.github.io/2019/04/18/215-Kth-Largest-Element-in-an-Array/</id>
+    <published>2019-04-18T10:46:53.000Z</published>
+    <updated>2021-06-21T07:22:10.082Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Find the kth largest element in an unsorted array.
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>62 Unique Paths</title>
+    <link href="https://songjinze.github.io/2019/04/18/62-Unique-Paths/"/>
+    <id>https://songjinze.github.io/2019/04/18/62-Unique-Paths/</id>
+    <published>2019-04-18T10:02:57.000Z</published>
+    <updated>2021-06-21T07:22:10.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;A robot is located at the top-left corner of a m x n
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>39 CombinationSum</title>
+    <link href="https://songjinze.github.io/2019/04/18/39-CombinationSum/"/>
+    <id>https://songjinze.github.io/2019/04/18/39-CombinationSum/</id>
+    <published>2019-04-18T09:43:46.000Z</published>
+    <updated>2021-06-21T07:22:10.083Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given a set of candidate numbers (candidates)
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP状态码汇总</title>
+    <link href="https://songjinze.github.io/2019/04/13/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E6%B1%87%E6%80%BB/"/>
+    <id>https://songjinze.github.io/2019/04/13/HTTP状态码汇总/</id>
+    <published>2019-04-12T16:57:36.000Z</published>
+    <updated>2021-06-21T07:22:10.090Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP状态码汇总&quot;&gt;&lt;a href=&quot;#HTTP状态码汇总&quot; class=&quot;headerlink&quot; title=&quot;HTTP状态码汇总&quot;&gt;&lt;/a&gt;HTTP状态码汇总&lt;/h1&gt;&lt;p&gt;一般来说我们见得最多的一个状态码是404（NOT
+        
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://songjinze.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="计算机网络" scheme="https://songjinze.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>338 Counting Bits</title>
+    <link href="https://songjinze.github.io/2019/04/04/338-Counting-Bits/"/>
+    <id>https://songjinze.github.io/2019/04/04/338-Counting-Bits/</id>
+    <published>2019-04-04T13:16:48.000Z</published>
+    <updated>2021-06-21T07:22:10.083Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Given a non negative integer number num. For every
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反转单词</title>
+    <link href="https://songjinze.github.io/2019/03/27/%E5%8F%8D%E8%BD%AC%E5%8D%95%E8%AF%8D/"/>
+    <id>https://songjinze.github.io/2019/03/27/反转单词/</id>
+    <published>2019-03-27T15:11:08.000Z</published>
+    <updated>2021-06-21T07:22:10.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;记一道面试问题&quot;&gt;&lt;a href=&quot;#记一道面试问题&quot; class=&quot;headerlink&quot; title=&quot;记一道面试问题&quot;&gt;&lt;/a&gt;记一道面试问题&lt;/h2&gt;&lt;p&gt;如何翻转字符串并保持其中的单词不变： 
+        
+      
+    
+    </summary>
+    
+      <category term="个人经验" scheme="https://songjinze.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="个人经验" scheme="https://songjinze.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%BB%8F%E9%AA%8C/"/>
     
   </entry>
   
