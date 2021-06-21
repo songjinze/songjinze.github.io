@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>初级排序</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="apple-mobile-web-app-title" content="Amaze UI"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="author" content="Jinze Song"><meta name="keywords" content><meta name="description" content="Get up early and study every day!"><link rel="stylesheet" href="/css/style.css"><link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico"><link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="preloader"><div id="status"><img alt="PRELOADER" src="/img/logo.png"></div></div><header id="header-bg-1" style="background-image:url(/img/4.jpg)"><div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div><p class="motto">Jinze Song&#39;s blog</p><p class="page-name">当前文章&nbsp;:&nbsp;《初级排序》</p><p class="page-name-other">6/21/2021</p><style type="text/css">header:after{content:'';position:relative;top:0;left:0;height:100%;width:100%;background:#222;opacity:.5;z-index:-1}.change-header-bg{font-style:normal}.change-header-bg i{text-align:center;cursor:pointer;pointer-events:bounding-box}@media(max-width:512px){.change-header-bg{display:none;visibility:hidden}}</style><script type="text/javascript">function changeHeaderBg(){var a="url("+Math.floor(109*Math.random()+1)+".jpg)";$("#header-bg-2").css("background-image",a)}</script><span class="change-header-bg">——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i></span><p></p></header><div id="cd-nav"><a href="#0" title="menu" class="cd-nav-trigger"><span></span></a><nav id="cd-main-nav"><ul><li class="fa fa-/"><a href="/" title="主页">主页</a></li><li class="fa fa-/categories/Java/"><a href="/categories/Java/" title="Java">Java</a></li><li class="fa fa-/categories/算法/"><a href="/categories/算法/" title="算法">算法</a></li><li class="fa fa-/archives"><a href="/archives" title="归档">归档</a></li><li class="fa fa-/categories"><a href="/categories" title="分类">分类</a></li><li class="fa fa-/tags"><a href="/tags" title="标签">标签</a></li><li class="fa fa-/about"><a href="/about" title="关于">关于</a></li><li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search">搜索</a></li></ul></nav></div><main><div class="page-container"><div class="am-g am-g-fixed blog-fixed blog-content"><div class="am-u-md-8 am-u-sm-12"><article class="am-article blog-article-p"><div class="am-article-hd"><h1 class="am-article-title blog-text-center"><a href="/20181113/初级排序/" itemprop="url">初级排序</a></h1><p class="am-article-meta blog-text-center"><span><i class="fa fa-clock-o"></i> <a href="/20181113/初级排序/" itemprop="url"><time datetime="2018-11-12T16:20:03.000Z" itemprop="datePublished">2018-11-13</time></a>&nbsp; </span><span><i class="fa fa-tags"></i> <a href="#算法" title="算法" rel="25">算法</a>&nbsp;</span></p></div><div class="am-article-bd"><div class="content" id="post-content"><h1 id="初级排序"><a href="#初级排序" class="headerlink" title="初级排序"></a>初级排序</h1><p>初级算法虽然很简单，但是有三点好处：</p><ol><li>可以通过初级算法熟悉排序算法的一些术语。</li><li>这些简单的算法在某些情况下会比复杂的算法更有效。</li><li>学习初级算法有助于帮助我们改进复杂算法的效率。</li></ol><h2 id="排序类算法模板"><a href="#排序类算法模板" class="headerlink" title="排序类算法模板"></a>排序类算法模板</h2><pre><code>
+public class Example{
+    public static void sort(Comparable[] a){}
+    private static boolean less(Comparable v,Comparable w){
+        return v.comparaTo(w) < 0;
+    }
+    private static void exch(Comparable[] a,int i,int j){
+        // 交换数组元素
+        comparable t=a[i]; 
+        a[i]=a[j]; a
+        [j]=t;    
+    }
+    private static void show(Comparable[] a){
+        // 在单行中打印数组
+        for(int i=0;i < a.length;i++){
+            stdOut.print(a[i]+" ");
+            stdOut.println();
+        }
+    }
+    public static boolean isSorted(Comparable[] a){
+        //测试数组元素是否有序
+        for(int i=1;i < a.length;i++){
+            if(less(a[i],a[i-1])) return false;
+            return true;
+        }
+    }
+    public static void main(String[] args){
+        //从标准输入读取字符串，将它们排序并输出
+        String[] a=In.readStrings();
+        sort(a);
+        assert isSorted(a);
+        show(a);
+    }
+}
+</code></pre><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序的基本思想如下：</p><ol><li>找到数组中最小的元素。</li><li>和数组的第一个元素交换位置。（如果第一个元素就是最小元素那么就和自己交换）</li><li>在剩下的元素中找到最小的元素，和第二个元素进行交换。</li><li>重复3，每次交换的位置+1，直到整个数组排序完成。</li></ol><h3 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h3><h4 id="运行时间和输入无关"><a href="#运行时间和输入无关" class="headerlink" title="运行时间和输入无关"></a>运行时间和输入无关</h4><p>因为选择排序无论如何都要遍历整个数组并每次都要移动，<strong>为了找出最小的元素而扫描一遍数组并不能为下一遍扫描提供什么信息</strong>。这种性质在某些情况下是缺点，因为使用选择排序的人可能会惊讶的发现，一个已经有序的数组或是主键全部相等的数组和一个元素随机排列的数组所用的排序时间是一样长的。</p><h4 id="数据移动是最少的"><a href="#数据移动是最少的" class="headerlink" title="数据移动是最少的"></a>数据移动是最少的</h4><p>每次交换都会改变两个数组元素的值，因此选择排序用了N次交换，交换次数和数组大小是线性关系。</p><h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><pre><code>
+public class Selection{
+    public static void sort(Comparable[] a){
+        //将a[]按升序排列
+        int N=a.length;
+        for(int i=0;i < N;i++){
+            //将a[i]和a[i+1...N]中最小的元素交换
+            int min=i;
+            for(int j=i+1;j < N;j++){
+                if(less(a[j],a[min])) min=j;
+            }
+            exch(a,i,min);
+        }
+}
+</code></pre><h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序就像整理扑克牌，将每一张牌插入到其他已经有序的牌中的适当位置。在计算机的实现中，为了给要插入的元素腾出空间，我们需要将其余所有元素在插入之前都向右移动一位。这种算法叫插入排序。<br>插入排序的步骤很简单：</p><ol><li>依次取数组中的一个元素</li><li>遍历当前元素左侧所有元素，找到一个位置，这个位置左侧元素小于这个元素，右侧元素大于这个元素。</li><li>将这个元素插入到这个位置，并将右侧所有元素右移一位。</li><li>重复前三步。</li></ol><h3 id="算法特点-1"><a href="#算法特点-1" class="headerlink" title="算法特点"></a>算法特点</h3><p>和选择排序相同，当前索引左边的元素都是有序的，但它们的最终位置不确定，为了插入更小的元素，它们可能会向右移动。<br>与选择排序不同的是，插入排序的时间取决于元素的初始顺序，对于一个很大的其中的元素已经有序的数组进行排序会比随机顺序的数组或是逆序数组进行排序要快得多。</p><p>我们考虑更一般的情况是部分有序数组。<strong>倒置</strong>是指数组中的两个顺序颠倒的元素。（比如EXA中E-A,X-A）如果数组中倒置的数量小于数组大小的某个倍数，那么我们所这个数组是部分有序的。下面是几种典型的部分有序数组：</p><ul><li>数组中每个元素距离它的最终位置都不远。</li><li>一个有序的大数组接一个小数组。</li><li>数组中只有几个元素的位置不正确。</li></ul><p>插入排序对这样的数组很有效，而选择排序则不然。实际上当倒置的情况很少时，插入排序额可能比其他任何排序都快。</p><h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><pre><code>
+public class Insertion{
+    public static void sort(Comparable[] a){
+        //将a[]按升序排列
+        Int N=a.length;
+        for(int i=1;i < N;i++){
+            //将a[i]插入到a[i-1]、a[i-2]、a[i-3]...之中
+            for(int j=i;j > 0 && less(a[j],a[j-1]);j--){
+                exch(a,j,j-1);
+            }
+        }
+    }
+}
+</code></pre><h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>希尔排序的思想是使数组中任意间隔为h的元素是有序的。这样的数组称为h有序数组。进行排序时，如果h很大，我们就能将元素移动到很远的地方，为实现更小的h有序创造方便。<br>因此我们进行希尔排序的时候，先要创造一个任意以1结尾的h序列，这样就可以将数组进行排序，这就是希尔排序。<br>实际上我们就是用h替换掉了插入排序中每次指针+1或-1，改成了+h或-h。</p><h3 id="算法特点-2"><a href="#算法特点-2" class="headerlink" title="算法特点"></a>算法特点</h3><p>希尔排序比插入排序更高效，是因为在插入排序的基础上权衡了子数组的规模和有序性。排序之初，各个子数组都很短，排序之后子数组都是部分有序的。<br>不过透彻理解希尔排序的性能很难，实际上，h的选取也是多种多样的。</p><h3 id="算法实现-2"><a href="#算法实现-2" class="headerlink" title="算法实现"></a>算法实现</h3><p>这里我们使用了h=3*h+1的序列。</p><pre><code>
+public class Shell{
+    public static void sort(Comparable[] a){
+        //将a[]按升序排列
+        int N=a.length;
+        int h=1;
+        while(h < N/3) h=3*h+1; //1,4,13,40,121,364,1093, ...
+        while(h >= 1){
+            //将数组变为h有序
+            for(int i=h; i < N; i++){
+                //将a[i]插入到a[i-h],a[i-2*h],a[i-3*h]...之中
+                for(int j=i;j >= h && less(a[j],a[j-h]); j-=h){
+                    exch(a,j,j-h);
+                }
+            }
+            h=h/3;
+        }
+    }
+}
+</code></pre></div></div></article><ul class="am-pagination"><li class="am-pagination-prev"><a class="pull-left" href="/20181113/归并排序/" title="归并排序">&laquo; 上一篇</a></li><li class="am-pagination-next"><a class="pull-right" href="/20181110/Boyer-Moore-Voting-Algorithm/" title="Boyer-Moore Voting Algorithm">下一篇 &raquo;</a></li></ul><div class="theme-annie-comment-button-container"><button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">加载评论</button></div><div id="annie-comment-container" class="theme-annie-comment-main-container"><div id="gitalk-container"></div><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><link rel="stylesheet" href="/css/comment.css"><script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script><script type="text/javascript">String.prototype.trimEnd=function(e){var r=this;if(null==e||null==e||""==e)return r;var l=e.split(",");if(0<l.length){var n=l.shift(),n=((e=this).length,new RegExp(n));return null!=(n=e.match(n))&&null!=n&&0<n.length&&(n=n[0].replace(/\\/g,"\\\\").replace(/\*/g,"\\*").replace(/\+/g,"\\+").replace(/\|/g,"\\|").replace(/\{/g,"\\{").replace(/\}/g,"\\}").replace(/\(/g,"\\(").replace(/\)/g,"\\)").replace(/\^/g,"\\^").replace(/\$/g,"\\$").replace(/\[/g,"\\[").replace(/\]/g,"\\]").replace(/\?/g,"\\?").replace(/\,/g,"\\,").replace(/\./g,"\\.").replace(/\&/g,"\\&"),n+="$",r=e.replace(new RegExp(n),"")),0<l.length?r.trimEnd(l.join()):r}};var gitalk=new Gitalk({clientID:"828a4850b1701761285e",clientSecret:"96e4f3ebb5f82dae68d0170a9bd103ad466ef46d",id:md5(location.href.trimEnd("#.*$,\\?.*$,index.html$")),repo:"BlogComment",owner:"songjinze",admin:"songjinze",distractionFreeMode:"true"});gitalk.render("gitalk-container")</script></div><script type="text/javascript">var Annie_Comment=function(){var n=document.getElementById("annie-comment-button"),e=document.getElementById("annie-comment-container");n.onclick=function(){return e.style.display="block",$("#annie-comment-button").css("display","none"),!1}};Annie_Comment()</script></div></div></div></main><footer><div class="blog-text-center"><div class="theme-annie-social"></div></div><div class="blog-text-center"><div class="theme-annie-copyright">&copy; 2017 - 2021, content by Jinze Song. All Rights Reserved.</div></div><div class="blog-text-center"><div class="theme-annie-copyright"><a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.</div></div></footer><script>window.jQuery||document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')</script><style>.motto{color:#000;font-size:20px;margin:100px 25% 0;width:50%;line-height:1.4;font-family:KaiTi,STXingkai,"Source Sans Pro","Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;text-align:center}@media(max-width:890px){.motto{margin:100px 10% 0;width:80%}}@media(max-width:890px){.motto{margin:100px 5% 0;width:90%}}</style><script src="/js/motto.js"></script><script type="text/javascript">$(".motto").html(getMingYanContent())</script><div class="popup search-popup local-search-popup"><span class="popup-btn-close">ESC</span><div class="container"><div class="col-md-8 col-md-offset-2"><div class="local-search-header clearfix"><span class="search-icon"></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="Search..." type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></div><script src="/js/ziploader.js"></script><script type="text/javascript">var isfetched=!1,isXml=!0,search_path="search.json";0===search_path.length?search_path="search.xml":/json$/i.test(search_path)&&(isXml=!1);var onPopupClose=function(t){$(".popup").fadeOut(300),$("#local-search-input").val(""),$(".search-result-list").remove(),$("#no-result").remove(),$("body").css("overflow","")};function proceedsearch(){$(".popup").fadeIn(300);var t=$("#local-search-input");t.attr("autocapitalize","none"),t.attr("autocorrect","off"),t.focus()}function initSearchJson(){initLoad(["/search.zip"],{loadOptions:{success:function(t){localStorage.setItem("searchJson",t["search.json"])},error:function(t){return console.log(t)}},returnOptions:{json:TYPE_TEXT},mimeOptions:{json:"application/json"}})}$.get("/searchVersion.txt?t="+ +new Date,function(t){localStorage.getItem("searchVersion")!==t&&(localStorage.setItem("searchVersion",t),initSearchJson())});var searchFunc=function(t,e){"use strict";isfetched=!0;var n=JSON.parse(localStorage.getItem("searchJson"));console.log(t);var o=document.getElementById(t),r=document.getElementById(e),e=function(){var w=o.value.trim().toLowerCase(),T=w.split(/[\s\-]+/);1<T.length&&T.push(w);var e,$=[];0<w.length&&n.forEach(function(t){var e=!1,n=0,l=0,o=t.title?t.title.trim():"",r=o.toLowerCase(),s=t.content?t.content.trim().replace(/<[^>]+>/g,""):"",a=s.toLowerCase(),i=decodeURIComponent(t.url),c=[],h=[];if(T.forEach(function(t){function e(t,e,n){var o=t.length;if(0===o)return[];var r,s=0,a=[];for(n||(e=e.toLowerCase(),t=t.toLowerCase());-1<(r=e.indexOf(t,s));)a.push({position:r,word:t}),s=r+o;return a}c=c.concat(e(t,r,!1)),h=h.concat(e(t,a,!1))}),(0<c.length||0<h.length)&&(e=!0,n=c.length+h.length),e){function u(t,e,n,o){for(var r=o[o.length-1],s=r.position,a=r.word,i=[],c=0;s+a.length<=n&&0!=o.length;){a===w&&c++,i.push({position:s,length:a.length});var h=s+a.length;for(o.pop();0!=o.length&&(s=(r=o[o.length-1]).position,a=r.word,s<h);)o.pop()}return l+=c,{hits:i,start:e,end:n,searchTextCount:c}}[c,h].forEach(function(t){t.sort(function(t,e){return e.position!==t.position?e.position-t.position:t.word.length-e.word.length})}),t=[],0!=c.length&&t.push(u(0,0,o.length,c));for(var p=[];0!=h.length;){var g=h[h.length-1],f=g.position,d=g.word,v=f-20;v<0&&(v=0),(g=(g=f+80)<f+d.length?f+d.length:g)>s.length&&(g=s.length),p.push(u(0,v,g,h))}function C(n,t){var o="",r=t.start;return t.hits.forEach(function(t){o+=n.substring(r,t.position);var e=t.position+t.length;o+='<b class="search-keyword">'+n.substring(t.position,e)+"</b>",r=e}),o+=n.substring(r,t.end)}p.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hits.length!==e.hits.length?e.hits.length-t.hits.length:t.start-e.start}),0<=(e=parseInt("2"))&&(p=p.slice(0,e));var m="";0!=t.length?m+="<li><a target='_blank' href='"+i+"' class='search-result-title'>"+C(o,t[0])+"</a>":m+="<li><a target='_blank' href='"+i+"' class='search-result-title'>"+o+"</a>",p.forEach(function(t){m+='<p class="search-result">'+C(s,t)+"...</p>"}),m+="</li>",$.push({item:m,searchTextCount:l,hitCount:n,id:$.length})}}),1===T.length&&""===T[0]?r.innerHTML='<div id="no-result"><i class="fa fa-search fa-5x" /></div>':0===$.length?r.innerHTML='<div id="no-result"><i class="fa fa-frown-o fa-5x" /> no result </div>':($.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hitCount!==e.hitCount?e.hitCount-t.hitCount:e.id-t.id}),e='<ul class="search-result-list">',$.forEach(function(t){e+=t.item}),e+="</ul>",r.innerHTML=e)};o.addEventListener("input",e),$("body").css("overflow",""),proceedsearch()};$(".popup-trigger").click(function(t){t.stopPropagation(),!1===isfetched?($(".sb-close").click(),searchFunc("local-search-input","local-search-result")):proceedsearch()}),$(".popup-btn-close").click(onPopupClose),$(".popup").click(function(t){t.stopPropagation()}),$(document).on("keyup",function(t){27===t.which&&$(".search-popup").is(":visible")&&onPopupClose()})</script><script type="text/javascript" src="/js/toc.js"></script><script type="text/javascript" src="/js/main.js"></script><script type="text/javascript">var random_bg=Math.floor(109*Math.random()+1),bg="url("+random_bg+".jpg)";$("#header-bg-2").css("background-image",bg)</script><style type="text/css">#totop{background:#fff;border-radius:50%;position:fixed;right:5.4%;bottom:80px;cursor:pointer}#totop a{color:#474747;background-color:transparent;padding:10px;text-decoration:none}@media(max-width:512px){#totop{display:none;visibility:hidden}}</style><div id="totop"><a href="javascript:;" class="fa fa-arrow-up"></a></div></body></html>
