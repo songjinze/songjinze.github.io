@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://songjinze.github.io/"/>
-  <updated>2021-06-21T08:57:04.494Z</updated>
+  <updated>2021-06-30T15:33:51.456Z</updated>
   <id>https://songjinze.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java锁与对象头总结</title>
+    <link href="https://songjinze.github.io/20210623/Java%E9%94%81%E4%B8%8E%E5%AF%B9%E8%B1%A1%E5%A4%B4%E6%80%BB%E7%BB%93/"/>
+    <id>https://songjinze.github.io/20210623/Java锁与对象头总结/</id>
+    <published>2021-06-23T10:01:57.577Z</published>
+    <updated>2021-06-30T15:33:51.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;锁机制有哪些？&quot;&gt;&lt;a href=&quot;#锁机制有哪些？&quot; class=&quot;headerlink&quot; title=&quot;锁机制有哪些？&quot;&gt;&lt;/a&gt;锁机制有哪些？&lt;/h2&gt;&lt;h3 id=&quot;乐观锁和悲观锁&quot;&gt;&lt;a href=&quot;#乐观锁和悲观锁&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://songjinze.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://songjinze.github.io/tags/Java/"/>
+    
+      <category term="底层原理" scheme="https://songjinze.github.io/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>霍夫曼压缩</title>
@@ -261,7 +289,7 @@
     <link href="https://songjinze.github.io/20190508/%E5%8D%95%E8%AF%8D%E6%9F%A5%E6%89%BE%E6%A0%91/"/>
     <id>https://songjinze.github.io/20190508/单词查找树/</id>
     <published>2019-05-08T02:35:17.000Z</published>
-    <updated>2021-06-21T09:41:38.849Z</updated>
+    <updated>2021-06-22T01:50:57.881Z</updated>
     
     <summary type="html">
     
@@ -518,35 +546,6 @@ Implement next permutation, which rearranges numbers into
         
           &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;
 Merge k sorted linked lists and return it as one sorted
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>148 Sort List</title>
-    <link href="https://songjinze.github.io/20190319/148-Sort-List/"/>
-    <id>https://songjinze.github.io/20190319/148-Sort-List/</id>
-    <published>2019-03-18T17:46:00.000Z</published>
-    <updated>2021-06-21T09:07:10.139Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;
-Sort a linked list in O(n log n) time using constant space
         
       
     
