@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://songjinze.github.io/"/>
-  <updated>2021-07-05T10:08:24.431Z</updated>
+  <updated>2021-07-08T10:18:41.855Z</updated>
   <id>https://songjinze.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql设置外部访问</title>
+    <link href="https://songjinze.github.io/20210708/Mysql%E8%AE%BE%E7%BD%AE%E5%A4%96%E9%83%A8%E8%AE%BF%E9%97%AE/"/>
+    <id>https://songjinze.github.io/20210708/Mysql设置外部访问/</id>
+    <published>2021-07-08T09:51:28.294Z</published>
+    <updated>2021-07-08T10:18:41.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装Mysql后设置外部可访问&quot;&gt;&lt;a href=&quot;#安装Mysql后设置外部可访问&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="项目经验" scheme="https://songjinze.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+      <category term="项目经验" scheme="https://songjinze.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="解决方案" scheme="https://songjinze.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    
+  </entry>
   
   <entry>
     <title>726原子的数量</title>
@@ -516,35 +544,6 @@
         
         
           &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Suppose an array sorted in ascending order is rotated
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://songjinze.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://songjinze.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://songjinze.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>31 Next Permutation</title>
-    <link href="https://songjinze.github.io/20190319/31-Next-Permutation/"/>
-    <id>https://songjinze.github.io/20190319/31-Next-Permutation/</id>
-    <published>2019-03-19T15:50:34.000Z</published>
-    <updated>2021-06-21T09:22:46.254Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;pre&gt;
-Implement next permutation, which rearranges numbers into
         
       
     
