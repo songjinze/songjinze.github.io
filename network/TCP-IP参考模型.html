@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TCP/IP参考模型 | Jinze Song&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="持续学习，持续进步">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.bdbeba68.js" as="script"><link rel="preload" href="/assets/js/2.327ce0e8.js" as="script"><link rel="preload" href="/assets/js/48.182032fb.js" as="script"><link rel="prefetch" href="/assets/js/10.e80513bd.js"><link rel="prefetch" href="/assets/js/11.7212d24b.js"><link rel="prefetch" href="/assets/js/12.c0b00be2.js"><link rel="prefetch" href="/assets/js/13.cbe3c690.js"><link rel="prefetch" href="/assets/js/14.ca75ee06.js"><link rel="prefetch" href="/assets/js/15.b6f52780.js"><link rel="prefetch" href="/assets/js/16.4a0150c3.js"><link rel="prefetch" href="/assets/js/17.e49c1b6a.js"><link rel="prefetch" href="/assets/js/18.29fb44a7.js"><link rel="prefetch" href="/assets/js/19.e78bb553.js"><link rel="prefetch" href="/assets/js/20.9185eec5.js"><link rel="prefetch" href="/assets/js/21.d5f93b02.js"><link rel="prefetch" href="/assets/js/22.4adc221c.js"><link rel="prefetch" href="/assets/js/23.e850e1d2.js"><link rel="prefetch" href="/assets/js/24.6ba02d21.js"><link rel="prefetch" href="/assets/js/25.77d5f493.js"><link rel="prefetch" href="/assets/js/26.d96a16dc.js"><link rel="prefetch" href="/assets/js/27.cfeebd57.js"><link rel="prefetch" href="/assets/js/28.5baa9dde.js"><link rel="prefetch" href="/assets/js/29.97b6145b.js"><link rel="prefetch" href="/assets/js/3.62ca7b57.js"><link rel="prefetch" href="/assets/js/30.728c7236.js"><link rel="prefetch" href="/assets/js/31.301d8afa.js"><link rel="prefetch" href="/assets/js/32.904f563f.js"><link rel="prefetch" href="/assets/js/33.96f615d7.js"><link rel="prefetch" href="/assets/js/34.f89323e6.js"><link rel="prefetch" href="/assets/js/35.14246a58.js"><link rel="prefetch" href="/assets/js/36.33daeddb.js"><link rel="prefetch" href="/assets/js/37.0102d792.js"><link rel="prefetch" href="/assets/js/38.d2ef212b.js"><link rel="prefetch" href="/assets/js/39.37c8c86a.js"><link rel="prefetch" href="/assets/js/4.308078f6.js"><link rel="prefetch" href="/assets/js/40.c74c1a0f.js"><link rel="prefetch" href="/assets/js/41.f7187f97.js"><link rel="prefetch" href="/assets/js/42.bf1d8fc1.js"><link rel="prefetch" href="/assets/js/43.8c735bbe.js"><link rel="prefetch" href="/assets/js/44.2cf77552.js"><link rel="prefetch" href="/assets/js/45.26c1f27d.js"><link rel="prefetch" href="/assets/js/46.a39f5cb0.js"><link rel="prefetch" href="/assets/js/47.a99dda1e.js"><link rel="prefetch" href="/assets/js/49.101aff25.js"><link rel="prefetch" href="/assets/js/5.8d00347e.js"><link rel="prefetch" href="/assets/js/50.05e874a0.js"><link rel="prefetch" href="/assets/js/51.5d20d392.js"><link rel="prefetch" href="/assets/js/52.a87b9d1c.js"><link rel="prefetch" href="/assets/js/53.5944507a.js"><link rel="prefetch" href="/assets/js/6.b41f3d08.js"><link rel="prefetch" href="/assets/js/7.67d9facb.js"><link rel="prefetch" href="/assets/js/8.642af7a3.js"><link rel="prefetch" href="/assets/js/9.d74fcfcb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jinze Song's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link router-link-active">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link router-link-active">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tcp-ip参考模型"><a href="#tcp-ip参考模型" class="header-anchor">#</a> TCP/IP参考模型</h1> <h2 id="来源"><a href="#来源" class="header-anchor">#</a> 来源</h2> <p>TCP/IP参考模型被所有广域计算机网络的鼻祖ARPANET所采用，而且被其集成这——全球范围内的Internet所采用。<br>
+ARPANET是由美国国防部资助的一个研究性网络。它通过租用的电话线，将几百所大学和政府部门的计算机设备连接起来。后来，当卫星和无线网络也要加入时，发现原来的协议在与它们互连时遇到了很大的麻烦，因而需要一种心得参考体系结构。所以，以无缝的方式将多个网络连接起来是从一开始就制定的主要目标之一。这个体系结构后来被称作TCP/IP参考模型。</p> <h2 id="分层"><a href="#分层" class="header-anchor">#</a> 分层</h2> <ol><li>链路层（link layer）</li> <li>互联网层（internet layer）</li> <li>传输层（transport layer）</li> <li>应用层（application layer）</li></ol> <h2 id="各层解释"><a href="#各层解释" class="header-anchor">#</a> 各层解释</h2> <h3 id="链路层"><a href="#链路层" class="header-anchor">#</a> 链路层</h3> <p>TCP/IP参考模型选择了数据包交换网络，它以一个可运行在不同网络之上的无连接网络层为基础。链路层是模型中最低层，该层描述了链路必须完成什么功能才能满足无连接的互联网络层的需求，比如串行线和经典以太网链路。<br>
+其实这不是一个真正意义上的层，而是主机与传输链路之间的一个接口。</p> <h3 id="互联网层"><a href="#互联网层" class="header-anchor">#</a> 互联网层</h3> <p>互联网层是将整个网络体系结构贯穿在一起的关键层，大致对应OSI的网络层。该层的任务是允许主机将数据包注入到任何网络，并且让这些数据包独立地到达接送方（接收方可能在不同的网络上）。<br>
+互联网定义了官方的数据包格式和协议，该协议称为<strong>因特网协议</strong>，与之相伴的还有一个辅助协议，称为<strong>因特网控制报文协议</strong>（ICMP，Internet Control Message Protocol）。很显然数据包路由是这里最主要的问题。</p> <h3 id="传输层"><a href="#传输层" class="header-anchor">#</a> 传输层</h3> <p>设计目标是允许源主机和目标主机上的对等实体进行对话，犹如OSI的传输层一样。这里定义两个端到端的传输协议：</p> <ol><li>传输控制协议（TCP，Transport Control Protocol），他是一个可靠的面向连接的协议，允许从一台机器发出的字节流正确无误地交付到互联网的另一台机器。还负责处理流量控制，以便确保发送方和接收方传输报文不会拥挤。</li> <li>用户数据报协议（UDP，User Datagram Protocol），它不可靠，无连接。适用于追求一定自由度的，不想要TCP的有序性和流量控制功能的应用程序。例如那些一次性的基于客户机-服务器类型的“请求-应答”查询应用，以及那些即时交付比精确交付更加重要的应用，比如传输语音或者视频。</li></ol> <h3 id="应用层"><a href="#应用层" class="header-anchor">#</a> 应用层</h3> <p>包含所有高层协议，没有表示层和会话层。</p> <h2 id="一些需要学习的协议"><a href="#一些需要学习的协议" class="header-anchor">#</a> 一些需要学习的协议</h2> <p>应用层： HTTP、SMTP、RTP、DNS<br>
+传输层： TCP、UDP<br>
+互联网层： IP、ICMP<br>
+链路层： DSL、SONET、802.11、Ethernet</p> <h2 id="osi参考模型和tcp-ip参考模型的比较"><a href="#osi参考模型和tcp-ip参考模型的比较" class="header-anchor">#</a> OSI参考模型和TCP/IP参考模型的比较</h2> <h3 id="共同点"><a href="#共同点" class="header-anchor">#</a> 共同点</h3> <p>两者都是以协议栈概念为基础，并且协议栈中的协议彼此相互独立。两个模型的各个层的功能也大致相似。</p> <h3 id="差异"><a href="#差异" class="header-anchor">#</a> 差异</h3> <h4 id="osi参考模型"><a href="#osi参考模型" class="header-anchor">#</a> OSI参考模型</h4> <p>首先，OSI参考模型的核心概念是</p> <ol><li>服务</li> <li>接口</li> <li>协议</li></ol> <p>区分了这些概念的同时，OSI每一层都为上一层执行某些服务，这些服务定义了这一层该做什么，每一层的接口告诉上面的进程如何访问本层。同时每一层的对等协议不会影响到上面各层。可见，OSI和现代的面向对象的思想很一致。
+OSI在协议出现之前就已经产生了，因此是现有模型后有协议，自由度较高，通用性强，但也面对在实际构建网络过程中，不同的网络难以有统一的规范问题。<br>
+而TCP/IP相反的是先有协议，它只是一个协议的描述而已，因此协议和模型高度吻合。问题也很明显，就是无法描述其他协议的非TCP/IP网络。<br>
+另一个区别是，OSI模型同时支持无连接和面向连接的通信，但传输层只支持面向连接的通信。而TCP/IP模型网络层只支持无连接，但是传输层同时支持两种通信模式。这样给用户一个选择机会，对于简单的”请求-应答“协议很重要。<br>
+但实际应用中，OSI、TCP/IP二者都有很大的弊端，感兴趣的朋友可以深入探讨。在这里不做过多赘述。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bdbeba68.js" defer></script><script src="/assets/js/2.327ce0e8.js" defer></script><script src="/assets/js/48.182032fb.js" defer></script>
+  </body>
+</html>

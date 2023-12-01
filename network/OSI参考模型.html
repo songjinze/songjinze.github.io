@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OSI参考模型 | Jinze Song&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="持续学习，持续进步">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.bdbeba68.js" as="script"><link rel="preload" href="/assets/js/2.327ce0e8.js" as="script"><link rel="preload" href="/assets/js/46.a39f5cb0.js" as="script"><link rel="prefetch" href="/assets/js/10.e80513bd.js"><link rel="prefetch" href="/assets/js/11.7212d24b.js"><link rel="prefetch" href="/assets/js/12.c0b00be2.js"><link rel="prefetch" href="/assets/js/13.cbe3c690.js"><link rel="prefetch" href="/assets/js/14.ca75ee06.js"><link rel="prefetch" href="/assets/js/15.b6f52780.js"><link rel="prefetch" href="/assets/js/16.4a0150c3.js"><link rel="prefetch" href="/assets/js/17.e49c1b6a.js"><link rel="prefetch" href="/assets/js/18.29fb44a7.js"><link rel="prefetch" href="/assets/js/19.e78bb553.js"><link rel="prefetch" href="/assets/js/20.9185eec5.js"><link rel="prefetch" href="/assets/js/21.d5f93b02.js"><link rel="prefetch" href="/assets/js/22.4adc221c.js"><link rel="prefetch" href="/assets/js/23.e850e1d2.js"><link rel="prefetch" href="/assets/js/24.6ba02d21.js"><link rel="prefetch" href="/assets/js/25.77d5f493.js"><link rel="prefetch" href="/assets/js/26.d96a16dc.js"><link rel="prefetch" href="/assets/js/27.cfeebd57.js"><link rel="prefetch" href="/assets/js/28.5baa9dde.js"><link rel="prefetch" href="/assets/js/29.97b6145b.js"><link rel="prefetch" href="/assets/js/3.62ca7b57.js"><link rel="prefetch" href="/assets/js/30.728c7236.js"><link rel="prefetch" href="/assets/js/31.301d8afa.js"><link rel="prefetch" href="/assets/js/32.904f563f.js"><link rel="prefetch" href="/assets/js/33.96f615d7.js"><link rel="prefetch" href="/assets/js/34.f89323e6.js"><link rel="prefetch" href="/assets/js/35.14246a58.js"><link rel="prefetch" href="/assets/js/36.33daeddb.js"><link rel="prefetch" href="/assets/js/37.0102d792.js"><link rel="prefetch" href="/assets/js/38.d2ef212b.js"><link rel="prefetch" href="/assets/js/39.37c8c86a.js"><link rel="prefetch" href="/assets/js/4.308078f6.js"><link rel="prefetch" href="/assets/js/40.c74c1a0f.js"><link rel="prefetch" href="/assets/js/41.f7187f97.js"><link rel="prefetch" href="/assets/js/42.bf1d8fc1.js"><link rel="prefetch" href="/assets/js/43.8c735bbe.js"><link rel="prefetch" href="/assets/js/44.2cf77552.js"><link rel="prefetch" href="/assets/js/45.26c1f27d.js"><link rel="prefetch" href="/assets/js/47.a99dda1e.js"><link rel="prefetch" href="/assets/js/48.182032fb.js"><link rel="prefetch" href="/assets/js/49.101aff25.js"><link rel="prefetch" href="/assets/js/5.8d00347e.js"><link rel="prefetch" href="/assets/js/50.05e874a0.js"><link rel="prefetch" href="/assets/js/51.5d20d392.js"><link rel="prefetch" href="/assets/js/52.a87b9d1c.js"><link rel="prefetch" href="/assets/js/53.5944507a.js"><link rel="prefetch" href="/assets/js/6.b41f3d08.js"><link rel="prefetch" href="/assets/js/7.67d9facb.js"><link rel="prefetch" href="/assets/js/8.642af7a3.js"><link rel="prefetch" href="/assets/js/9.d74fcfcb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jinze Song's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link router-link-active">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link router-link-active">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="osi参考模型"><a href="#osi参考模型" class="header-anchor">#</a> OSI参考模型</h1> <h2 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h2> <p>OSI模型基于国际标准化组织（ISO， International Standards Organization）的提案，作为各层协议迈向国际化标准的第一步。<br>
+OSI（Open Systems Interconnection）参考模型，即<strong>开放系统互联</strong>参考模型，它涉及如何连接开放系统，即那些为了与其他系统通信而开放的系统。</p> <h2 id="基本原则"><a href="#基本原则" class="header-anchor">#</a> 基本原则</h2> <p>OSI模型有7层，对应于这7层的基本原则简要概括如下：</p> <ol><li>应该在需要一个不同抽象体的地方创建一层。</li> <li>每一层都应该执行一个明确定义的功能。</li> <li>每一层功能的选择应该向国际标准化协议的目标看齐。</li> <li>层与层边界的选择应该使跨越接口的信息流最小。</li> <li>层数应该足够多，保证不同的功能不会被混杂在同一层中，但同时层数又不能太多，以免体系结构变得过于庞大。</li></ol> <h2 id="组成"><a href="#组成" class="header-anchor">#</a> 组成</h2> <p>从下至上的七层依次为：</p> <ol><li>物理层（physical layer）</li> <li>数据链路层（data link layer）</li> <li>网络层（network layer）</li> <li>传输层（transport layer)</li> <li>会话层（session layer）</li> <li>表示层（presentation layer）</li> <li>应用层（application layer）</li></ol> <h2 id="分层详解"><a href="#分层详解" class="header-anchor">#</a> 分层详解</h2> <h3 id="物理层"><a href="#物理层" class="header-anchor">#</a> <strong>物理层</strong></h3> <p>顾名思义物理层关注在一条通信信道上传输原始比特。设计问题要保证传输比特1、0的正确性。典型问题包括用什么电子信号来表示1和0、一个比特持续多少纳秒、传输是否可以在两个方向上同时进行、初始连接如何建立、双方结束之后如何撤销连接、网络连接器有多少针以及每一针的用途是什么等。主要涉及机械、电子和时序接口，以及物理层之下的物理传输介质等。</p> <h3 id="数据链路层"><a href="#数据链路层" class="header-anchor">#</a> <strong>数据链路层</strong></h3> <p>数据链路层主要任务是将一个原始的传输设施转变成一条没有漏检传输错误的线路。做法是江镇似的错误掩盖起来，使得网络层看不到。为此，发送放将输入的数据拆分成<strong>数据帧</strong>，然后顺序发送这些数据帧。一个数据帧通常为几百个或者几千个字节长。接收方必须确认正确收到的每一帧，即给发送方发回一个<strong>确认帧</strong>。
+数据链路层另一个问题（大多数高层都存在）是如何避免一个快速发送方用数据“淹没”一个慢速接收方，所以通常需要一种流量调节机制来让发送方知道接收方何时可以接收更多数据。<br>
+广播式网络的数据链路层还有另一个问题：如何控制对共享信道的访问。数据链路层的一个特殊子层，即介质访问控制子层，就是专门处理这个问题的。</p> <h3 id="网络层"><a href="#网络层" class="header-anchor">#</a> <strong>网络层</strong></h3> <p>网络层的主要功能是控制子网的运行。一个关键的设计问题是如何将数据包从源端路由到接收方。路由可以使静态的，也可以是高度动态的。<br>
+处理拥塞也是网络层的责任，一般要和高层协议结合起来综合处理拥塞才高效。延迟、传输时间、抖动等服务质量也是网络层的问题。<br>
+网络层也要解决很多数据包从一个网络传输到另一个网络时出现的问题。比如两个网络寻址方案不同、数据包过大、两个网络协议不同等等。网络层通过解决这些问题从而允许异构网络互相连接成为互联网络。<br>
+广播式网络中由于路由较简单，因此网络层可能比较单薄甚至不存在。</p> <h3 id="传输层"><a href="#传输层" class="header-anchor">#</a> <strong>传输层</strong></h3> <p>传输层的基本功能是接收来自上一层的数据。必要时将数据进行分割处理再传输到网络层。工作必须高效并上下隔离，对上面各层透明。<br>
+传输层还决定会话层，因而是实际的最终网络用户提供那些类型的服务。<br>
+传输层是真正的端到端的层，它自始至终将数据从源端携带到接收方。换句话说，源机器上的一个程序利用报文头和控制信息与目标机器上的一个类似程序进行会话，在下面的各层，每个协议涉及一台机器与它的直接邻居，而不涉及最终的源机器和目标机器，即源机器和目标机器可能被多个中间路由器隔离了。<br>
+由此可见，第1～3层（物理层为第一层）是链式连接的，而第4～7层是端到端的。</p> <h3 id="会话层"><a href="#会话层" class="header-anchor">#</a> <strong>会话层</strong></h3> <p>会话层允许不同机器上的用户建立会话。会话通常提供各种服务，包括<strong>对话控制</strong>（记录该由谁来传递数据）、<strong>令牌管理</strong>（禁止双方同时执行同一个关键操作），以及<strong>同步功能</strong>（在一个长传输过程中设置一些断点，以便在系统崩溃之后还能恢复到崩溃前的状态继续运行）。</p> <h3 id="表示层"><a href="#表示层" class="header-anchor">#</a> <strong>表示层</strong></h3> <p>表示层以下各层最关注的是如何传递数据位，而表示层关注的是所传递信息的语法和语义。为不同计算机的不同内部数据表示法抽象定义出一种数据结构，以便数据间交换。表示层管理这些抽象的数据结构，并允许定义和交换更高层的数据结构（比如银行账户记录）。</p> <h3 id="应用层"><a href="#应用层" class="header-anchor">#</a> <strong>应用层</strong></h3> <p>应用层包含了用户通常需要的各种各样的协议。例如超文本传输协议（HTTP，HyperText Transfer Protocol），它是万维网的基础。还有一些其他的应用协议，用于如文件传输、电子邮件及网络新闻等。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bdbeba68.js" defer></script><script src="/assets/js/2.327ce0e8.js" defer></script><script src="/assets/js/46.a39f5cb0.js" defer></script>
+  </body>
+</html>

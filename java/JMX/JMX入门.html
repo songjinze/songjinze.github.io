@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JMX入门 | Jinze Song&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="持续学习，持续进步">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.bdbeba68.js" as="script"><link rel="preload" href="/assets/js/2.327ce0e8.js" as="script"><link rel="preload" href="/assets/js/30.728c7236.js" as="script"><link rel="prefetch" href="/assets/js/10.e80513bd.js"><link rel="prefetch" href="/assets/js/11.7212d24b.js"><link rel="prefetch" href="/assets/js/12.c0b00be2.js"><link rel="prefetch" href="/assets/js/13.cbe3c690.js"><link rel="prefetch" href="/assets/js/14.ca75ee06.js"><link rel="prefetch" href="/assets/js/15.b6f52780.js"><link rel="prefetch" href="/assets/js/16.4a0150c3.js"><link rel="prefetch" href="/assets/js/17.e49c1b6a.js"><link rel="prefetch" href="/assets/js/18.29fb44a7.js"><link rel="prefetch" href="/assets/js/19.e78bb553.js"><link rel="prefetch" href="/assets/js/20.9185eec5.js"><link rel="prefetch" href="/assets/js/21.d5f93b02.js"><link rel="prefetch" href="/assets/js/22.4adc221c.js"><link rel="prefetch" href="/assets/js/23.e850e1d2.js"><link rel="prefetch" href="/assets/js/24.6ba02d21.js"><link rel="prefetch" href="/assets/js/25.77d5f493.js"><link rel="prefetch" href="/assets/js/26.d96a16dc.js"><link rel="prefetch" href="/assets/js/27.cfeebd57.js"><link rel="prefetch" href="/assets/js/28.5baa9dde.js"><link rel="prefetch" href="/assets/js/29.97b6145b.js"><link rel="prefetch" href="/assets/js/3.62ca7b57.js"><link rel="prefetch" href="/assets/js/31.301d8afa.js"><link rel="prefetch" href="/assets/js/32.904f563f.js"><link rel="prefetch" href="/assets/js/33.96f615d7.js"><link rel="prefetch" href="/assets/js/34.f89323e6.js"><link rel="prefetch" href="/assets/js/35.14246a58.js"><link rel="prefetch" href="/assets/js/36.33daeddb.js"><link rel="prefetch" href="/assets/js/37.0102d792.js"><link rel="prefetch" href="/assets/js/38.d2ef212b.js"><link rel="prefetch" href="/assets/js/39.37c8c86a.js"><link rel="prefetch" href="/assets/js/4.308078f6.js"><link rel="prefetch" href="/assets/js/40.c74c1a0f.js"><link rel="prefetch" href="/assets/js/41.f7187f97.js"><link rel="prefetch" href="/assets/js/42.bf1d8fc1.js"><link rel="prefetch" href="/assets/js/43.8c735bbe.js"><link rel="prefetch" href="/assets/js/44.2cf77552.js"><link rel="prefetch" href="/assets/js/45.26c1f27d.js"><link rel="prefetch" href="/assets/js/46.a39f5cb0.js"><link rel="prefetch" href="/assets/js/47.a99dda1e.js"><link rel="prefetch" href="/assets/js/48.182032fb.js"><link rel="prefetch" href="/assets/js/49.101aff25.js"><link rel="prefetch" href="/assets/js/5.8d00347e.js"><link rel="prefetch" href="/assets/js/50.05e874a0.js"><link rel="prefetch" href="/assets/js/51.5d20d392.js"><link rel="prefetch" href="/assets/js/52.a87b9d1c.js"><link rel="prefetch" href="/assets/js/53.5944507a.js"><link rel="prefetch" href="/assets/js/6.b41f3d08.js"><link rel="prefetch" href="/assets/js/7.67d9facb.js"><link rel="prefetch" href="/assets/js/8.642af7a3.js"><link rel="prefetch" href="/assets/js/9.d74fcfcb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jinze Song's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jmx入门"><a href="#jmx入门" class="header-anchor">#</a> JMX入门</h1> <blockquote><p>部分内容翻译自https://docs.oracle.com/javase/tutorial/jmx/overview/index.html</p></blockquote> <h2 id="什么是jmx"><a href="#什么是jmx" class="header-anchor">#</a> 什么是JMX</h2> <p>Java Management Extensions (JMX) 技术是Java SE platform的一项标准技术。JMX，顾名思义是Java应用管理的扩展。其提供了一个简单标准的方式用来管理应用、设备和服务。JMX技术是动态的，可以用来监控和管理资源，也可以用来监控和管理JVM。</p> <p>JMX技术中，一个给定的资源被称为MBean（Managed Bean），MBean也是一个Java对象，这些MBean被注册到对象的中央管理器中，并且可以有多个服务来处理MBean。这样JMX的Agent就可以直接控制资源，并且让其被远程管理的应用所管控。</p> <p>JMX资源的创建方式是完全独立于注册管理的，因此不管管理应用的实现是什么，资源都可以正常的注册和被管理。而这接口是独立的。</p> <p>JMX提供了标准的接口（JMX Connector）来让你从远程管理系统中访问JMX。JXM Connectors的接口是统一的，可以使用不同的协议来实现。远程的管理系统也
+可以忽略协议的实现，来轻松地对JMX进行管理。</p> <h2 id="jmx的优点"><a href="#jmx的优点" class="header-anchor">#</a> JMX的优点</h2> <ul><li>为Java应用程序管理提供了轻量化的开发方式。</li> <li>为管理Java应用、系统和网络提供了标准化的方式。</li> <li>开箱即用地管理JVM进程。</li> <li>JMX技术提供了可扩展的，动态的管理框架。</li> <li>JMX影响着现有的标准Java技术。例如JNDI API。</li> <li>基于JMX的应用程序可以通过NetBeans IDE进行创建。</li> <li>JMX集成了现有的管理方案以及技术。</li></ul> <h2 id="jmx的架构"><a href="#jmx的架构" class="header-anchor">#</a> JMX的架构</h2> <p>JMX技术架构分为三层：</p> <ul><li>Instrumentation</li> <li>JMX Agent</li> <li>Remote Management</li></ul> <h3 id="instrumentation"><a href="#instrumentation" class="header-anchor">#</a> Instrumentation</h3> <p>这一层指JMX需要通过标准化的方式将资源注册起来。JMX使用叫MBean的对象来实现对于资源的管控。在后文会做进一步介绍。</p> <h3 id="jmx-agent"><a href="#jmx-agent" class="header-anchor">#</a> JMX Agent</h3> <p>JMX提供了标准的代理来直接控制JMX的资源，并让资源可以被远程管理进程获取。JMX Agent的核心组件叫MBean Server，其主要作用在于管理注册了的MBean。
+JMX Agent还包含一系列MBean的管理服务，以及至少一个connector来对接远程服务。JMX Agents通常都是和MBeans在同一个jvm里，但这也不是必须的。</p> <p>Agent的是完全独立的，也就是说Agent既不需要知道它到底要监控哪些MBean，也不需要知道哪些远程应用回来监控当前服务。这一切都得益于JMX的接口隔离。</p> <h3 id="remote-management"><a href="#remote-management" class="header-anchor">#</a> Remote Management</h3> <p>JMX暴露给远程管理的接口（interface）和协议（protocol）是分离的。这意味着你可以通过不同的协议来暴露MBean。例如HTML Adapter可以允许你
+在浏览器上浏览MBean。</p> <p>JMX提供的标准方式是使用Java Remote Method Invocation（RMI）的方式。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bdbeba68.js" defer></script><script src="/assets/js/2.327ce0e8.js" defer></script><script src="/assets/js/30.728c7236.js" defer></script>
+  </body>
+</html>

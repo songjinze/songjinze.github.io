@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BufferAllocator中的池化 | Jinze Song&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="持续学习，持续进步">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.bdbeba68.js" as="script"><link rel="preload" href="/assets/js/2.327ce0e8.js" as="script"><link rel="preload" href="/assets/js/43.8c735bbe.js" as="script"><link rel="prefetch" href="/assets/js/10.e80513bd.js"><link rel="prefetch" href="/assets/js/11.7212d24b.js"><link rel="prefetch" href="/assets/js/12.c0b00be2.js"><link rel="prefetch" href="/assets/js/13.cbe3c690.js"><link rel="prefetch" href="/assets/js/14.ca75ee06.js"><link rel="prefetch" href="/assets/js/15.b6f52780.js"><link rel="prefetch" href="/assets/js/16.4a0150c3.js"><link rel="prefetch" href="/assets/js/17.e49c1b6a.js"><link rel="prefetch" href="/assets/js/18.29fb44a7.js"><link rel="prefetch" href="/assets/js/19.e78bb553.js"><link rel="prefetch" href="/assets/js/20.9185eec5.js"><link rel="prefetch" href="/assets/js/21.d5f93b02.js"><link rel="prefetch" href="/assets/js/22.4adc221c.js"><link rel="prefetch" href="/assets/js/23.e850e1d2.js"><link rel="prefetch" href="/assets/js/24.6ba02d21.js"><link rel="prefetch" href="/assets/js/25.77d5f493.js"><link rel="prefetch" href="/assets/js/26.d96a16dc.js"><link rel="prefetch" href="/assets/js/27.cfeebd57.js"><link rel="prefetch" href="/assets/js/28.5baa9dde.js"><link rel="prefetch" href="/assets/js/29.97b6145b.js"><link rel="prefetch" href="/assets/js/3.62ca7b57.js"><link rel="prefetch" href="/assets/js/30.728c7236.js"><link rel="prefetch" href="/assets/js/31.301d8afa.js"><link rel="prefetch" href="/assets/js/32.904f563f.js"><link rel="prefetch" href="/assets/js/33.96f615d7.js"><link rel="prefetch" href="/assets/js/34.f89323e6.js"><link rel="prefetch" href="/assets/js/35.14246a58.js"><link rel="prefetch" href="/assets/js/36.33daeddb.js"><link rel="prefetch" href="/assets/js/37.0102d792.js"><link rel="prefetch" href="/assets/js/38.d2ef212b.js"><link rel="prefetch" href="/assets/js/39.37c8c86a.js"><link rel="prefetch" href="/assets/js/4.308078f6.js"><link rel="prefetch" href="/assets/js/40.c74c1a0f.js"><link rel="prefetch" href="/assets/js/41.f7187f97.js"><link rel="prefetch" href="/assets/js/42.bf1d8fc1.js"><link rel="prefetch" href="/assets/js/44.2cf77552.js"><link rel="prefetch" href="/assets/js/45.26c1f27d.js"><link rel="prefetch" href="/assets/js/46.a39f5cb0.js"><link rel="prefetch" href="/assets/js/47.a99dda1e.js"><link rel="prefetch" href="/assets/js/48.182032fb.js"><link rel="prefetch" href="/assets/js/49.101aff25.js"><link rel="prefetch" href="/assets/js/5.8d00347e.js"><link rel="prefetch" href="/assets/js/50.05e874a0.js"><link rel="prefetch" href="/assets/js/51.5d20d392.js"><link rel="prefetch" href="/assets/js/52.a87b9d1c.js"><link rel="prefetch" href="/assets/js/53.5944507a.js"><link rel="prefetch" href="/assets/js/6.b41f3d08.js"><link rel="prefetch" href="/assets/js/7.67d9facb.js"><link rel="prefetch" href="/assets/js/8.642af7a3.js"><link rel="prefetch" href="/assets/js/9.d74fcfcb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jinze Song's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="bufferallocator中的池化"><a href="#bufferallocator中的池化" class="header-anchor">#</a> BufferAllocator中的池化</h2> <p>从整体来说，分配缓冲区的时候Netty利用了缓存机制，尽最大可能复用重复的内存，并减少内存碎片。</p> <p>Netty的池化通过PoolChunk来完成，可以认为每次申请Buffer时，都是通过某个PoolChunk中的共享内存来分配的。具体策略如下：</p> <h3 id="poolarena"><a href="#poolarena" class="header-anchor">#</a> PoolArena</h3> <p>对于PoolArena来说，其内部按照6级分位来划分内存空间。每一级单独维护缓存。</p> <div class="language- extra-class"><pre class="language-text"><code>        q100 = new PoolChunkList(this, null, 100, Integer.MAX_VALUE, chunkSize);
+        q075 = new PoolChunkList(this, q100, 75, 100, chunkSize);
+        q050 = new PoolChunkList(this, q075, 50, 100, chunkSize);
+        q025 = new PoolChunkList(this, q050, 25, 75, chunkSize);
+        q000 = new PoolChunkList(this, q025, 1, 50, chunkSize);
+        qInit = new PoolChunkList(this, q000, Integer.MIN_VALUE, 25, chunkSize);
+</code></pre></div><p>6个chunkList形成一个双向链表，里面对应的内存分片会根据当前占用的空间大小进行动态调整。</p> <p>q025中25和75的含义是，当前chunkList分配的单片最多占用75%的的chunkSize，最少占用25%的chunkSize。对于不满足的场景，会顺延到对应的ChunkList中。</p> <ul><li>每次申请内存时，从head（init）开始申请，由于init中的最大内存量是很少的，因此如果申请失败，就转而到下一个（25）中申请。如果申请成功了，对应的chunk会再次检查自己是否还满足当前百分位，如果不满足，那么自动挪到对应的list中。</li> <li>每次释放内存时，和申请一样在释放后进行调整。</li></ul> <p><strong>这样做可以保证每次都先从内存空间最大的chunk中申请内存，来保证空间利用率的最大化。</strong></p> <h3 id="poolchunk"><a href="#poolchunk" class="header-anchor">#</a> PoolChunk</h3> <p>PoolChunk是PoolArena中的最小单元。</p> <p>Chunk内部也有如下概念：</p> <ul><li>page表示内存分片的最小单位。</li> <li>run表示page集合。</li> <li>chunk表示run集合。</li> <li>chunkSize=maxPages * pageSize</li></ul> <p>每次Buffer分配的时候，从上到下寻找第一个可分配的空间。</p> <div class="language- extra-class"><pre class="language-text"><code>  A chunk has the following layout:
+
+     /-----------------\
+     | run             |
+     |                 |
+     |                 |
+     |-----------------|
+     | run             |
+     |                 |
+     |-----------------|
+     | unalloctated    |
+     | (freed)         |
+     |                 |
+     |-----------------|
+     | subpage         |
+     |-----------------|
+     | unallocated     |
+     | (freed)         |
+     | ...             |
+     | ...             |
+     | ...             |
+     |                 |
+     |                 |
+     |                 |
+     \-----------------/
+
+</code></pre></div><h4 id="内存申请"><a href="#内存申请" class="header-anchor">#</a> 内存申请</h4> <p>申请策略保存在PoolArena的父类SizeClasses。</p> <p>可以理解为是一个基于分组的内存分配策略。</p> <p>sizeClasses中的内存分配，可以理解为每个分组都是上一个分组的2^n倍。因此group大小按照log方式保存。</p> <p><strong>这样的好处在于对于任意size的申请来说，首先可以通过这个表格对照来计算出最佳的大小和类型（subPage或run）。</strong></p> <div class="language- extra-class"><pre class="language-text"><code> * sizeClasses: Complete table of [index, log2Group, log2Delta, nDelta, isMultiPageSize,
+ *                 isSubPage, log2DeltaLookup] tuples.
+ *     index: Size class index.
+ *     log2Group: Log of group base size (no deltas added).
+ *     log2Delta: Log of delta to previous size class.
+ *     nDelta: Delta multiplier.
+ *     isMultiPageSize: 'yes' if a multiple of the page size, 'no' otherwise.
+ *     isSubPage: 'yes' if a subpage size class, 'no' otherwise.
+ *     log2DeltaLookup: Same as log2Delta if a lookup table size class, 'no'
+ *                      otherwise.
+ *   (index, log2Group, log2Delta, nDelta, isMultiPageSize, isSubPage, log2DeltaLookup)
+ * &lt;p&gt;
+ *   ( 0,     4,        4,         0,       no,             yes,        4)
+ *   ( 1,     4,        4,         1,       no,             yes,        4)
+ *   ( 2,     4,        4,         2,       no,             yes,        4)
+ *   ( 3,     4,        4,         3,       no,             yes,        4)
+ * &lt;p&gt;
+ *   ( 4,     6,        4,         1,       no,             yes,        4)
+ *   ( 5,     6,        4,         2,       no,             yes,        4)
+ *   ( 6,     6,        4,         3,       no,             yes,        4)
+ *   ( 7,     6,        4,         4,       no,             yes,        4)
+ * &lt;p&gt;
+ *   ( 8,     7,        5,         1,       no,             yes,        5)
+ *   ( 9,     7,        5,         2,       no,             yes,        5)
+ *   ( 10,    7,        5,         3,       no,             yes,        5)
+ *   ( 11,    7,        5,         4,       no,             yes,        5)
+ *   ...
+ *   ...
+ *   ( 72,    23,       21,        1,       yes,            no,        no)
+ *   ( 73,    23,       21,        2,       yes,            no,        no)
+ *   ( 74,    23,       21,        3,       yes,            no,        no)
+ *   ( 75,    23,       21,        4,       yes,            no,        no)
+ * &lt;p&gt;
+ *   ( 76,    24,       22,        1,       yes,            no,        no)
+</code></pre></div><h4 id="数据结构"><a href="#数据结构" class="header-anchor">#</a> 数据结构</h4> <p>handle：</p> <p>是一个长数字，bit抽象成如下：</p> <div class="language- extra-class"><pre class="language-text"><code>oooooooo ooooooos ssssssss ssssssue bbbbbbbb bbbbbbbb bbbbbbbb bbbbbbbb
+</code></pre></div><ul><li>o：15bit，表示chunk中的page偏移量。</li> <li>s：15bit，表示当前run中的page数量。</li> <li>u：1bit，表示是否被使用。</li> <li>e：1bit，表示是否是subPage。</li> <li>b：32bit，表示subPage的bitmapIdx。如果不是subPage就是0.</li></ul> <p>runsAvailMap：</p> <ul><li>key: runOffset</li> <li>value: handle</li></ul> <p>runsAvail:</p> <p>优先队列的列表。每个优先队列管理相同大小的run。run通过offset设置优先级，所以每次都可以分配最小offset的run。</p> <h4 id="算法"><a href="#算法" class="header-anchor">#</a> 算法</h4> <p>allocateRun(size):</p> <ol><li>找到第一个满足要求的run</li> <li>如果run的page比需要的多，run分裂，分裂后面的留给后续使用。</li></ol> <p>allocateSubpage(size):</p> <ol><li>找到第一个满足size没满的subpage。如果找到了直接返回，否则分配一个新的PoolSubpage。</li> <li>执行SubPage的分配（allocate）。</li></ol> <p>free(handle, len, buffer)</p> <ol><li>如果释放的是subpage，那么释放当前标记。</li> <li>如果subpage没被使用，或者是一个run，那么释放。</li> <li>合并连续的可用run。</li> <li>保存合并后的run。</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bdbeba68.js" defer></script><script src="/assets/js/2.327ce0e8.js" defer></script><script src="/assets/js/43.8c735bbe.js" defer></script>
+  </body>
+</html>

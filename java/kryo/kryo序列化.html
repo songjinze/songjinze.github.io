@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kryo序列化框架 | Jinze Song&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css">
+    <meta name="description" content="持续学习，持续进步">
+    
+    <link rel="preload" href="/assets/css/0.styles.d6ad21ed.css" as="style"><link rel="preload" href="/assets/js/app.bdbeba68.js" as="script"><link rel="preload" href="/assets/js/2.327ce0e8.js" as="script"><link rel="preload" href="/assets/js/41.f7187f97.js" as="script"><link rel="prefetch" href="/assets/js/10.e80513bd.js"><link rel="prefetch" href="/assets/js/11.7212d24b.js"><link rel="prefetch" href="/assets/js/12.c0b00be2.js"><link rel="prefetch" href="/assets/js/13.cbe3c690.js"><link rel="prefetch" href="/assets/js/14.ca75ee06.js"><link rel="prefetch" href="/assets/js/15.b6f52780.js"><link rel="prefetch" href="/assets/js/16.4a0150c3.js"><link rel="prefetch" href="/assets/js/17.e49c1b6a.js"><link rel="prefetch" href="/assets/js/18.29fb44a7.js"><link rel="prefetch" href="/assets/js/19.e78bb553.js"><link rel="prefetch" href="/assets/js/20.9185eec5.js"><link rel="prefetch" href="/assets/js/21.d5f93b02.js"><link rel="prefetch" href="/assets/js/22.4adc221c.js"><link rel="prefetch" href="/assets/js/23.e850e1d2.js"><link rel="prefetch" href="/assets/js/24.6ba02d21.js"><link rel="prefetch" href="/assets/js/25.77d5f493.js"><link rel="prefetch" href="/assets/js/26.d96a16dc.js"><link rel="prefetch" href="/assets/js/27.cfeebd57.js"><link rel="prefetch" href="/assets/js/28.5baa9dde.js"><link rel="prefetch" href="/assets/js/29.97b6145b.js"><link rel="prefetch" href="/assets/js/3.62ca7b57.js"><link rel="prefetch" href="/assets/js/30.728c7236.js"><link rel="prefetch" href="/assets/js/31.301d8afa.js"><link rel="prefetch" href="/assets/js/32.904f563f.js"><link rel="prefetch" href="/assets/js/33.96f615d7.js"><link rel="prefetch" href="/assets/js/34.f89323e6.js"><link rel="prefetch" href="/assets/js/35.14246a58.js"><link rel="prefetch" href="/assets/js/36.33daeddb.js"><link rel="prefetch" href="/assets/js/37.0102d792.js"><link rel="prefetch" href="/assets/js/38.d2ef212b.js"><link rel="prefetch" href="/assets/js/39.37c8c86a.js"><link rel="prefetch" href="/assets/js/4.308078f6.js"><link rel="prefetch" href="/assets/js/40.c74c1a0f.js"><link rel="prefetch" href="/assets/js/42.bf1d8fc1.js"><link rel="prefetch" href="/assets/js/43.8c735bbe.js"><link rel="prefetch" href="/assets/js/44.2cf77552.js"><link rel="prefetch" href="/assets/js/45.26c1f27d.js"><link rel="prefetch" href="/assets/js/46.a39f5cb0.js"><link rel="prefetch" href="/assets/js/47.a99dda1e.js"><link rel="prefetch" href="/assets/js/48.182032fb.js"><link rel="prefetch" href="/assets/js/49.101aff25.js"><link rel="prefetch" href="/assets/js/5.8d00347e.js"><link rel="prefetch" href="/assets/js/50.05e874a0.js"><link rel="prefetch" href="/assets/js/51.5d20d392.js"><link rel="prefetch" href="/assets/js/52.a87b9d1c.js"><link rel="prefetch" href="/assets/js/53.5944507a.js"><link rel="prefetch" href="/assets/js/6.b41f3d08.js"><link rel="prefetch" href="/assets/js/7.67d9facb.js"><link rel="prefetch" href="/assets/js/8.642af7a3.js"><link rel="prefetch" href="/assets/js/9.d74fcfcb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6ad21ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Jinze Song's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/architecture/" class="nav-link">
+  架构
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/redis/" class="nav-link">
+  Redis
+</a></li></ul></div></div><div class="nav-item"><a href="/network/" class="nav-link">
+  网络
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/songjinze" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kryo序列化框架"><a href="#kryo序列化框架" class="header-anchor">#</a> Kryo序列化框架</h1> <p>Kryo用于Java语言中的对象数据序列化。相比jdk序列化框架占用更少内存，速度更快。</p> <p><a href="https://github.com/EsotericSoftware/kryo" target="_blank" rel="noopener noreferrer">Kryo Github<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bdbeba68.js" defer></script><script src="/assets/js/2.327ce0e8.js" defer></script><script src="/assets/js/41.f7187f97.js" defer></script>
+  </body>
+</html>
